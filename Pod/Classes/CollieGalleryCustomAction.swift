@@ -10,7 +10,7 @@ import UIKit
 
 /// Class used to create a custom action in the activity controller
 open class CollieGalleryCustomAction: UIActivity {
-    fileprivate var customActivityType = ""
+//    fileprivate var customActivityType = ""
     fileprivate var activityName = ""
     fileprivate var activityImageName = ""
     fileprivate var customActionWhenTapped:( (Void)-> Void)!
@@ -28,14 +28,14 @@ open class CollieGalleryCustomAction: UIActivity {
     public init(title: String, imageName: String, performAction: @escaping (() -> ()) ) {
         self.activityName = title
         self.activityImageName = imageName
-        self.customActivityType = "Action \(title)"
+//        self.customActivityType = "Action \(title)"
         self.customActionWhenTapped = performAction
         super.init()
     }
     
-    override open var activityType : String? {
-        return customActivityType
-    }
+//    override open var activityType : String? {
+//        return customActivityType
+//    }
     
     override open var activityTitle : String? {
         return activityName
