@@ -13,6 +13,7 @@ DESC
   s.author           = { "Guilherme Munhoz" => "g.araujo.munhoz@gmail.com" }
   s.source           = { :git => "https://github.com/gmunhoz/CollieGallery.git", :tag => s.version.to_s }
 
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
