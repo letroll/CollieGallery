@@ -212,6 +212,9 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         
         pagingScrollView.addSubview(pictureView)
         pictureViews.append(pictureView)
+        
+        let contentSize = getScrollViewContentSize(scrollFrame)
+        pagingScrollView.contentSize = contentSize
     }
     
     fileprivate func setupScrollView() {
