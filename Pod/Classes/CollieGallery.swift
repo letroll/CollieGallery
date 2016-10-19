@@ -200,6 +200,20 @@ open class CollieGallery: UIViewController, UIScrollViewDelegate, CollieGalleryV
         
     }
     
+    public func addPictures(pictureUrl:String){
+        let avaiableSize = getInitialAvaiableSize()
+        let scrollFrame = getScrollViewFrame(avaiableSize)
+        
+        let picture = CollieGalleryPicture(url: pictureUrl)
+        pictures.append(picture)
+        let pictureFrame = getPictureFrame(scrollFrame, pictureIndex: pictures.count-1)
+        let pictureView = CollieGalleryView(picture: picture, frame: pictureFrame, options: options, theme: theme)
+        pictureView.delegate = self
+        
+        pagingScrollView.addSubview(pictureView)
+        pictureViews.append(pictureView)
+    }
+    
     fileprivate func setupScrollView() {
         let avaiableSize = getInitialAvaiableSize()
         let scrollFrame = getScrollViewFrame(avaiableSize)
